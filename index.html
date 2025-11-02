@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual - Frube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tienda Virtual</h1>
+        <div class="producto">
+            <img src="https://www.danone.es/sites/g/files/wkmsbl1666/files/styles/product_image/public/frube-fresa.png" alt="Frube" class="producto-img">
+            <h2>Frube</h2>
+            <p>Yogur líquido para llevar. Sabor fresa.</p>
+            <span class="precio">$1.50</span>
+            <div class="pedido">
+                <input type="number" id="cantidad" min="1" value="1">
+                <button onclick="hacerPedido()">Pedir</button>
+            </div>
+        </div>
+        <div id="mensaje"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
