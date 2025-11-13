@@ -14,10 +14,7 @@ Bienvenido a la tienda virtual de Frube, donde encontrarás los mejores yogures 
 1. Abre `index.html` en tu navegador o ejecuta:
    ```
    start index.html
-   ```
    
-   O si tienes Node.js instalado:
-   ```
    npm start
    ```
 
@@ -31,7 +28,6 @@ Bienvenido a la tienda virtual de Frube, donde encontrarás los mejores yogures 
 - `index.html` - Página principal de la tienda
 - `style.css` - Estilos de la aplicación
 - `app.js` - Lógica principal del frontend
-- `api.js` - (Opcional) Backend básico con Node.js/Express
 
 ## Tecnologías Utilizadas
 
@@ -41,6 +37,6 @@ Bienvenido a la tienda virtual de Frube, donde encontrarás los mejores yogures 
 - LocalStorage para persistencia de datos
 - Font Awesome para iconos
 
-## Personalización
+
 
 Puedes personalizar los productos editando el archivo `app.js` en la sección de datos de productos.
