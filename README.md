@@ -39,4 +39,4 @@ Bienvenido a la tienda virtual de Frube, donde encontrarás los mejores yogures 
 
 
 
-Puedes personalizar los productos editando el archivo `app.js` en la sección de datos de productos.
+
