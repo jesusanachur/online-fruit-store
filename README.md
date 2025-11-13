@@ -1,65 +1,46 @@
-# Tienda Virtual - Aplicación Node.js con Docker
+# Tienda Virtual Frube
 
-Aplicación web de tienda virtual con API REST usando Node.js, Express y Docker.
+Bienvenido a la tienda virtual de Frube, donde encontrarás los mejores yogures líquidos.
 
-## Estructura del Proyecto
+## Características
 
-```
-tienda/
-├── index.html          # Frontend de la tienda
-├── style.css           # Estilos CSS
-├── app.js              # JavaScript del cliente
-├── api.js              # API REST con Express
-├── package.json        # Dependencias Node.js
-├── Dockerfile          # Configuración Docker
-└── docker-compose.yml  # Orquestación de contenedores
-```
+- Catálogo de productos
+- Carrito de compras
+- Historial de pedidos
+- Interfaz intuitiva y responsiva
 
-## Requisitos
+## Cómo usar
 
-- Docker Desktop instalado
-- Node.js 18+ (opcional, para desarrollo local)
-
-## Instalación y Ejecución
-
-### Opción 1: Con Docker (Recomendado)
-
-1. **Construir y ejecutar con Docker Compose:**
-   ```bash
-   docker-compose up --build
+1. Abre `index.html` en tu navegador o ejecuta:
    ```
-
-2. **La API estará disponible en:** `http://localhost:3000`
-
-3. **Abrir el archivo `index.html`** en tu navegador para usar la aplicación.
-
-### Opción 2: Sin Docker (Desarrollo local)
-
-1. **Instalar dependencias:**
-   ```bash
-   npm install
+   start index.html
    ```
-
-2. **Ejecutar la API:**
-   ```bash
+   
+   O si tienes Node.js instalado:
+   ```
    npm start
    ```
 
-3. **Abrir `index.html`** en tu navegador.
+2. Explora los productos disponibles
+3. Ajusta las cantidades con los botones + y -
+4. Haz clic en "Comprar Ahora" para finalizar tu pedido
+5. Revisa tu historial de pedidos con el botón "Historial"
 
-## Endpoints de la API
+## Estructura del Proyecto
 
-- `POST /api/pedidos` - Crear un nuevo pedido
-- `GET /api/pedidos` - Obtener todos los pedidos
-
-## Detener la Aplicación
-
-```bash
-docker-compose down
-```
+- `index.html` - Página principal de la tienda
+- `style.css` - Estilos de la aplicación
+- `app.js` - Lógica principal del frontend
+- `api.js` - (Opcional) Backend básico con Node.js/Express
 
 ## Tecnologías Utilizadas
 
-- **Backend:** Node.js, Express, CORS
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **Contenedores:** Docker, Docker Compose
+- HTML5
+- CSS3 (con Flexbox y Grid)
+- JavaScript (ES6+)
+- LocalStorage para persistencia de datos
+- Font Awesome para iconos
+
+## Personalización
+
+Puedes personalizar los productos editando el archivo `app.js` en la sección de datos de productos.

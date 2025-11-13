@@ -1,18 +1,12 @@
 {
-  "name": "tienda-api",
+  "name": "tienda-frube",
   "version": "1.0.0",
-  "description": "API REST para tienda de productos",
-  "main": "api.js",
-  "type": "commonjs",
+  "description": "Tienda virtual de productos Frube",
+  "main": "app.js",
   "scripts": {
-    "start": "node api.js",
-    "dev": "node api.js"
+    "start": "start index.html"
   },
-  "keywords": ["api", "express", "tienda"],
+  "keywords": ["tienda", "frube", "ecommerce"],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "cors": "^2.8.5"
-  }
+  "license": "ISC"
 }
