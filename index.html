@@ -3,159 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tienda virtual de Frube - Los mejores yogures líquidos">
-    <title>Tienda Virtual - Frube</title>
+    <title>Tienda de Frutas - Pasarela de Pago</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <h1><i class="fas fa-store"></i> Tienda Virtual Frube</h1>
-            <button class="btn-historial" onclick="verHistorial()">
-                <i class="fas fa-history"></i> Historial
-            </button>
+        <h1>Tienda de Frutas</h1>
+        <div class="cart-icon">
+            <i class="material-icons">shopping_cart</i>
+            <span id="cart-count" class="cart-count">0</span>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Producto Card -->
-        <div class="producto-card animate-up">
-            <div class="producto-badge">¡Oferta Especial!</div>
-            <img src="https://www.danone.es/sites/g/files/wkmsbl1666/files/styles/product_image/public/frube-fresa.png" 
-                 alt="Frube Yogur Fresa" 
-                 class="producto-img"
-                 onerror="this.src='https://via.placeholder.com/200?text=Frube+Yogur+Fresa'">
-            
-            <h2>Frube Yogur Fresa</h2>
-            
-            <p class="producto-desc">
-                <i class="fas fa-check-circle"></i> Yogur líquido premium<br>
-                <i class="fas fa-check-circle"></i> Sabor fresa natural<br>
-                <i class="fas fa-check-circle"></i> Perfecto para llevar
-            </p>
-            
-            <div class="precio-container">
-                <span class="precio-anterior">$2.00</span>
-                <span class="precio">$1.50</span>
-                <span class="descuento">-25%</span>
-            </div>
-            
-            <div class="cantidad-selector">
-                <label>Cantidad:</label>
-                <div class="cantidad-controls">
-                    <button type="button" class="btn-cantidad" onclick="cambiarCantidad(-1)" aria-label="Reducir cantidad">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <input type="number" 
-                           id="cantidad" 
-                           min="1" 
-                           value="1" 
-                           readonly
-                           aria-label="Cantidad de productos">
-                    <button type="button" class="btn-cantidad" onclick="cambiarCantidad(1)" aria-label="Aumentar cantidad">
-                        <i class="fas fa-plus"></i>
-                    </button>
+    <main class="main-content">
+        <!-- Sección de Productos -->
+        <section id="productos" class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-grid">
+                <!-- Producto 1 -->
+                <div class="producto-card" data-id="1">
+                    <div class="producto-img-container">
+                        <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Fresas frescas" 
+                             class="producto-img">
+                        <div class="producto-badge">Nuevo</div>
+                    </div>
+                    <h3>Fresas Frescas</h3>
+                    <p class="producto-desc">Dulces y jugosas fresas recién cosechadas</p>
+                    <p class="producto-precio">$3.99 <span class="producto-unidad">/ 500g</span></p>
+                    <div class="producto-acciones">
+                        <div class="cantidad">
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, -1)">-</button>
+                            <span class="cantidad-num">0</span>
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, 1)">+</button>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="producto-card" data-id="2">
+                    <div class="producto-img-container">
+                        <img src="https://images.unsplash.com/photo-1573246123719-4b4b9a5c0a6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Melocotones jugosos" 
+                             class="producto-img">
+                        <div class="producto-badge">Popular</div>
+                    </div>
+                    <h3>Melocotones</h3>
+                    <p class="producto-desc">Melocotones dulces y aromáticos</p>
+                    <p class="producto-precio">$2.99 <span class="producto-unidad">/ 500g</span></p>
+                    <div class="producto-acciones">
+                        <div class="cantidad">
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, -1)">-</button>
+                            <span class="cantidad-num">0</span>
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, 1)">+</button>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="producto-card" data-id="3">
+                    <div class="producto-img-container">
+                        <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Plátanos maduros" 
+                             class="producto-img">
+                        <div class="producto-badge oferta">Oferta</div>
+                    </div>
+                    <h3>Plátanos</h3>
+                    <p class="producto-desc">Plátanos orgánicos de la mejor calidad</p>
+                    <p class="producto-precio">$1.49 <span class="producto-unidad">/ kg</span></p>
+                    <div class="producto-acciones">
+                        <div class="cantidad">
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, -1)">-</button>
+                            <span class="cantidad-num">0</span>
+                            <button class="btn-cantidad" onclick="cambiarCantidad(this, 1)">+</button>
+                        </div>
+                        <button class="btn-agregar" onclick="agregarAlCarrito(this)">
+                            <i class="material-icons">add_shopping_cart</i>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="total-preview">
+        <!-- Carrito de Compras -->
+        <aside class="carrito">
+            <h2>Tu Carrito <i class="material-icons">shopping_cart</i></h2>
+            <div id="carrito-items" class="carrito-items">
+                <p class="carrito-vacio">Tu carrito está vacío</p>
+            </div>
+            <div class="carrito-total">
                 <span>Total:</span>
-                <span id="totalPreview" class="total-amount">$1.50</span>
+                <span id="carrito-total">$0.00</span>
             </div>
-
-            <button class="btn-comprar" onclick="mostrarPasarela()" aria-label="Proceder al pago">
-                <i class="fas fa-shopping-cart"></i> Comprar Ahora
+            <button id="pagar-ahora" class="btn-pagar" disabled>
+                <i class="material-icons">payment</i> Pagar Ahora
             </button>
-            
-            <div id="mensaje"></div>
-        </div>
+        </aside>
 
-        <!-- Pasarela de Pago (Modal) -->
-        <div id="pasarelaModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarPasarela()" aria-label="Cerrar">&times;</span>
-                <h2><i class="fas fa-credit-card"></i> Finalizar Compra</h2>
+        <!-- Pasarela de Pago (inicialmente oculta) -->
+        <section id="pasarela-pago" class="pasarela-pago hidden">
+            <div class="pago-contenedor">
+                <div class="pago-tarjeta">
+                    <div class="pago-encabezado">
+                        <h2><i class="material-icons">credit_card</i> Información de Pago</h2>
+                        <button class="btn-volver"><i class="material-icons">arrow_back</i> Volver al carrito</button>
+                    </div>
+                    
+                    <form id="pago-form" class="pago-form">
+                        <div class="form-grupo">
+                            <label for="card-number">Número de tarjeta</label>
+                            <div class="input-contenedor">
+                                <i class="material-icons">credit_card</i>
+                                <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-fila">
+                            <div class="form-grupo">
+                                <label for="expiry">Vencimiento (MM/AA)</label>
+                                <div class="input-contenedor">
+                                    <i class="material-icons">calendar_today</i>
+                                    <input type="text" id="expiry" placeholder="MM/AA" maxlength="5" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grupo">
+                                <label for="cvv">CVV</label>
+                                <div class="input-contenedor">
+                                    <i class="material-icons">lock</i>
+                                    <input type="text" id="cvv" placeholder="123" maxlength="4" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grupo">
+                            <label for="email">Correo electrónico</label>
+                            <div class="input-contenedor">
+                                <i class="material-icons">email</i>
+                                <input type="email" id="email" placeholder="tucorreo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="resumen-compra">
+                            <h3>Resumen de tu compra</h3>
+                            <div id="resumen-items" class="resumen-items">
+                                <!-- Los ítems del carrito se mostrarán aquí -->
+                            </div>
+                            <div class="resumen-total">
+                                <span>Total a pagar:</span>
+                                <span id="monto-total">$0.00</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="pay-button" class="btn-confirmar-pago">
+                            <i class="material-icons">lock</i> Pagar $<span id="amount-display">0.00</span>
+                        </button>
+                        
+                        <p class="pago-seguro">
+                            <i class="material-icons">security</i> Pago seguro y encriptado
+                        </p>
+                    </form>
+                </div>
                 
-                <div class="resumen-compra">
-                    <h3>Resumen de tu pedido</h3>
-                    <div class="resumen-item">
-                        <span>Producto:</span>
-                        <span>Frube Yogur Fresa</span>
+                <div class="pago-info">
+                    <div class="info-tarjetas">
+                        <h3>Tarjetas aceptadas</h3>
+                        <div class="tarjetas-aceptadas">
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-discover"></i>
+                        </div>
                     </div>
-                    <div class="resumen-item">
-                        <span>Cantidad:</span>
-                        <span id="resumenCantidad">1</span>
+                    
+                    <div class="info-seguridad">
+                        <h3><i class="material-icons">security</i> Compra segura</h3>
+                        <p>Tus datos están protegidos con encriptación de 256 bits.</p>
                     </div>
-                    <div class="resumen-item">
-                        <span>Precio unitario:</span>
-                        <span>$1.50</span>
-                    </div>
-                    <div class="resumen-item total-item">
-                        <span>Total a pagar:</span>
-                        <span id="resumenTotal">$1.50</span>
+                    
+                    <div class="info-soporte">
+                        <h3><i class="material-icons">support_agent</i> ¿Necesitas ayuda?</h3>
+                        <p>Contáctanos en <a href="mailto:soporte@tiendafrutas.com">soporte@tiendafrutas.com</a></p>
                     </div>
                 </div>
-
-                <form id="formPago" class="form-pago" onsubmit="procesarPago(event)">
-                    <div class="form-group">
-                        <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
-                        <input type="text" id="nombre" placeholder="Juan Pérez" required>
+            </div>
+        </section>
+        
+        <!-- Recibo de pago (inicialmente oculto) -->
+        <div id="receipt" class="recibo hidden">
+            <div class="recibo-contenido">
+                <div class="recibo-encabezado">
+                    <i class="material-icons">check_circle</i>
+                    <h2>¡Pago Completado!</h2>
+                    <p>Tu pago se ha procesado correctamente</p>
+                </div>
+                
+                <div class="recibo-detalles">
+                    <div class="detalle">
+                        <span>Monto pagado:</span>
+                        <span id="receipt-amount" class="monto">$0.00</span>
                     </div>
-
-                    <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
-                        <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+                    <div class="detalle">
+                        <span>Referencia:</span>
+                        <span id="receipt-reference" class="referencia">PAY-XXXXXXX</span>
                     </div>
-
-                    <div class="form-group">
-                        <label for="direccion"><i class="fas fa-map-marker-alt"></i> Dirección de envío</label>
-                        <input type="text" id="direccion" placeholder="Calle, número, ciudad, código postal" required>
+                    <div class="detalle">
+                        <span>Fecha y hora:</span>
+                        <span id="receipt-date" class="fecha">00/00/0000 00:00</span>
                     </div>
-
-                    <div style="display: flex; gap: 15px;">
-                        <div class="form-group" style="flex: 1;">
-                            <label for="tarjeta"><i class="fas fa-credit-card"></i> Número de tarjeta</label>
-                            <input type="text" id="tarjeta" placeholder="1234 5678 9012 3456" required>
-                        </div>
-                        
-                        <div class="form-group" style="width: 100px;">
-                            <label for="expiracion">Expira</label>
-                            <input type="text" id="expiracion" placeholder="MM/AA" required>
-                        </div>
-                        
-                        <div class="form-group" style="width: 80px;">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" placeholder="123" required>
-                        </div>
+                    <div class="detalle">
+                        <span>Método de pago:</span>
+                        <span class="metodo">Tarjeta de crédito</span>
                     </div>
-
-                    <button type="submit" class="btn-pagar">
-                        <i class="fas fa-lock"></i> Confirmar Pago
+                </div>
+                
+                <div class="recibo-acciones">
+                    <button id="nueva-compra" class="btn-primario">
+                        <i class="material-icons">shopping_cart</i> Nueva Compra
                     </button>
-                    
-                    <div class="seguridad-info">
-                        <p><i class="fas fa-lock"></i> Pago seguro con encriptación SSL</p>
-                        <div class="metodos-pago">
-                            <i class="fab fa-cc-visa" title="Visa"></i>
-                            <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-                            <i class="fab fa-cc-amex" title="American Express"></i>
-                        </div>
-                    </div>
-                </form>
+                    <button id="ver-recibo" class="btn-secundario">
+                        <i class="material-icons">receipt</i> Ver Recibo
+                    </button>
+                </div>
+                
+                <div class="recibo-footer">
+                    <p>Gracias por tu compra en <strong>Tienda de Frutas</strong></p>
+                    <p>Se ha enviado un correo de confirmación a tu dirección de email.</p>
+                </div>
             </div>
         </div>
-        <!-- Mensaje de confirmación -->
-        <div id="mensaje" class="mensaje"></div>
-    </div>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p><i class="fas fa-shield-alt"></i> Compra 100% segura | <i class="fas fa-truck"></i> Envío gratis en pedidos mayores a $10</p>
-    </footer>
-
-    <script src="app.js"></script>
+    <!-- Scripts -->
+    <script src="pagos.js"></script>
+    <script>
+        // Función para mostrar notificaciones
+        function mostrarNotificacion(mensaje) {
+            const notificacion = document.createElement('div');
+            notificacion.className = 'notificacion';
+            notificacion.textContent = mensaje;
+            document.body.appendChild(notificacion);
+            
+            setTimeout(() => {
+                notificacion.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => {
+                    document.body.removeChild(notificacion);
+                }, 300);
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
